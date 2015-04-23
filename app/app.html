@@ -2,21 +2,22 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>Dash Communication</title>
+    <title>App | Dash Communication</title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Communication app for ICU patients without ability to speak or use their hands.">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">  
 
     <link href="//www.google-analytics.com" rel="dns-prefetch">
     <link href="//ajax.googleapis.com" rel="dns-prefetch">
     <link href="assets/css/style.min.css" rel="stylesheet">
-    <link href="assets/css/dash.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/dash.css">
 
     <script src="assets/components/modernizr.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="/assets/js/app.js"></script>
 
   </head>
   <body>
@@ -36,12 +37,28 @@
 
     <main class="main" role="main">
       <div class="container">
-        <h1>Dash communication is coming soon.</h1>
-        <p>Because everyone needs to communicate.</p> 
-      </div>
-      <div class="container">
-        <p><a href="/app.html"><img src="assets/img/topsecret.jpg" class="tallpad"></a></p>
-      </div>
+		<div class="row clearfix">
+			<div class="col-md-12 column" >
+				 <button type="button" class="btn btn-block btn-lg tallpad border" id="buttonContent" onclick="updateTopWhenTopSelected();updateLeftWhenTopSelected();updateRightWhenTopSelected();updateBottomWhenTopSelected();changeContent()">Keywords</button>
+			</div>
+		</div>
+		<div class="row clearfix">
+			<div class="col-md-4 column">
+				 <button type="button" class="btn btn-block btn-lg tallpad border" id="buttonContent" onClick="updateTopWhenLeftSelected();updateLeftWhenLeftSelected();updateRightWhenLeftSelected();updateBottomWhenLeftSelected();changeContent()">A B C D E F G H I</button>
+			</div>
+			<div class="col-md-4 column">
+				<h3 class="middle_text">Select the first letter to begin writing</h3>
+			</div>
+			<div class="col-md-4 column">
+				 <button type="button" class="btn btn-block btn-lg tallpad border" id="buttonContent" onClick="updateTopWhenRightSelected();updateLeftWhenRightSelected();updateRightWhenRightSelected();updateBottomWhenRightSelected();changeContent();">J K L M N O P Q R</button>
+			</div>
+		</div>
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				 <button type="button" class="btn btn-lg btn-block tallpad border" id="buttonContent" onClick="updateTopWhenBottomSelected();updateLeftWhenBottomSelected();updateRightWhenBottomSelected();updateBottomWhenBottomSelected();changeContent()">S T U V W X Y Z</button>
+			</div>
+		</div>
+	  </div>
     </main>
 
     <footer class="footer" role="contentinfo">
