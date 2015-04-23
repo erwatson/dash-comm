@@ -1,0 +1,19 @@
+button.tallpad {
+    padding-bottom: 60px; 
+    padding-top: 60px;
+}
+button.border {
+	border-style: solid;
+	border-width: 3px;
+	border-color: #4d4d4d;
+}
+h3.middle_text {
+	text-align: center;
+}
+img.tallpad {
+    padding-bottom: 60px; 
+    padding-top: 60px;
+}
+
+
+
