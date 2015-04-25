@@ -32,13 +32,17 @@ $(document).ready(function(){
   };
 
   var deleteLastLetter = function(){
-  	console.log('hooked up');
-  	var currentstr = $('.sentence').innerHTML;
-  	if(currentstr.length){	
-	  	var newstr = current.split('').pop();
-	  	$('.sentence').html(newstr);
+  	var currentStr = $('.sentence').html();
+  	if(currentStr.length){	
+	  	var strArray = currentStr.split('');
+	  	strArray.pop();
+	  	$('.sentence').html(strArray.join(''));
   	}
   }
+
+  $('.delete').on('click', function(){
+  	deleteLastLetter();
+  })
 
   var appendAndReset = function(input){
   	$('.sentence').append(input);
