@@ -1,6 +1,6 @@
 button.tallpad {
-    padding-bottom: 60px; 
-    padding-top: 60px;
+  padding-bottom: 60px; 
+  padding-top: 60px;
 }
 button.border {
 	border-style: solid;
@@ -11,9 +11,12 @@ h3.middle_text {
 	text-align: center;
 }
 img.tallpad {
-    padding-bottom: 60px; 
-    padding-top: 60px;
+  padding-bottom: 60px; 
+  padding-top: 60px;
 }
-
+div.sentence{
+  font-size: 24px;
+  font-weight: 800;
+}
 
 
