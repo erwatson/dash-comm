@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
   // find all of buttons (there should be 3), and call the produceSubsets function to populate the buttons 
+  console.log('hi');
 
   var letters = new Letters("abcdefghijklmnopqrstuvwxyz");
 
@@ -10,7 +11,6 @@ $(document).ready(function(){
   		appendAndReset(input);
   	} else {		
 		  var letterContainers = document.getElementsByClassName('letterContainer');
-		  console.log('input', input)
 		  var containerLetters = letters.producesubSets(input);
 		  // console.log('containerLetters', containerLetters);
 	    for(var i = 0; i < letterContainers.length; i++){
@@ -30,6 +30,15 @@ $(document).ready(function(){
 	    }
   	}
   };
+
+  var deleteLastLetter = function(){
+  	console.log('hooked up');
+  	var currentstr = $('.sentence').innerHTML;
+  	if(currentstr.length){	
+	  	var newstr = current.split('').pop();
+	  	$('.sentence').html(newstr);
+  	}
+  }
 
   var appendAndReset = function(input){
   	$('.sentence').append(input);
