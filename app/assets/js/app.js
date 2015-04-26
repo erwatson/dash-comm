@@ -44,11 +44,16 @@ $(document).ready(function(){
   	deleteLastLetter();
   })
 
+  $('.reset').on('click', function(){
+  	$('.sentence').html('');
+  	updateUI(letters.initialLetters.split(''))
+  })
+
   var appendAndReset = function(input){
   	$('.sentence').append(input);
   	var newletters = letters.initialLetters.split('');
 		updateUI(newletters);
-  }
+  };
 
   updateUI(letters.initialLetters.split(''));
 });
