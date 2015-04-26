@@ -17,6 +17,7 @@
     <script src="assets/components/modernizr.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="/assets/js/letters.js"></script>
     <script src="/assets/js/app.js"></script>
 
   </head>
@@ -29,7 +30,7 @@
       <nav class="nav" role="navigation">
         <ul>
           <li>
-            <a href="/"></a>
+            <a href="index.html">Go Home</a>
           </li>
         </ul>
       </nav>
@@ -39,27 +40,40 @@
       <div class="container">
 		<div class="row clearfix">
 			<div class="col-md-12 column" >
-				 <button type="button" class="btn btn-block btn-lg tallpad border" id="buttonContent" onclick="updateTopWhenTopSelected();updateLeftWhenTopSelected();updateRightWhenTopSelected();updateBottomWhenTopSelected();changeContent()">Keywords</button>
+				 <button type="button" class="btn btn-block btn-lg tallpad border" id="buttonContent" onclick="console.log('hello')">Keywords</button>
 			</div>
 		</div>
 		<div class="row clearfix">
 			<div class="col-md-4 column">
-				 <button type="button" class="btn btn-block btn-lg tallpad border" id="buttonContent" onClick="updateTopWhenLeftSelected();updateLeftWhenLeftSelected();updateRightWhenLeftSelected();updateBottomWhenLeftSelected();changeContent()">A B C D E F G H I</button>
+				 <button type="button" class="letterContainer first btn btn-block btn-lg tallpad border" id="buttonContent"></button>
 			</div>
 			<div class="col-md-4 column">
 				<h3 class="middle_text">Select the first letter to begin writing</h3>
+        <div class="sentence"></div>
 			</div>
 			<div class="col-md-4 column">
-				 <button type="button" class="btn btn-block btn-lg tallpad border" id="buttonContent" onClick="updateTopWhenRightSelected();updateLeftWhenRightSelected();updateRightWhenRightSelected();updateBottomWhenRightSelected();changeContent();">J K L M N O P Q R</button>
+				 <button type="button" class="letterContainer second btn btn-block btn-lg tallpad border" id="buttonContent"></button>
 			</div>
 		</div>
 		<div class="row clearfix">
 			<div class="col-md-12 column">
-				 <button type="button" class="btn btn-lg btn-block tallpad border" id="buttonContent" onClick="updateTopWhenBottomSelected();updateLeftWhenBottomSelected();updateRightWhenBottomSelected();updateBottomWhenBottomSelected();changeContent()">S T U V W X Y Z</button>
+				 <button type="button" class="letterContainer third btn btn-lg btn-block tallpad border" id="buttonContent"></button>
 			</div>
 		</div>
+    <div class="row clearfix">
+      <div class="col-md-4 column">
+        <button class="btn btn-lg delete">Delete Previous Letter</button> 
+      </div>
+      <div class="col-md-2 column">
+        <button class="btn btn-lg space">Space</button> 
+      </div>
+      <div class="col-md-2 column">
+        <button class="btn btn-lg reset">Reset</button> 
+      </div>
+    </div>
 	  </div>
     </main>
+
 
     <footer class="footer" role="contentinfo">
 
