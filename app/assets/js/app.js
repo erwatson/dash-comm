@@ -42,11 +42,15 @@ $(document).ready(function(){
 
   $('.delete').on('click', function(){
   	deleteLastLetter();
-  })
+  });
 
   $('.reset').on('click', function(){
   	$('.sentence').html('');
   	updateUI(letters.initialLetters.split(''))
+  });
+
+  $('.space').on('click', function(){
+  	space();
   })
 
   var appendAndReset = function(input){
@@ -54,6 +58,10 @@ $(document).ready(function(){
   	var newletters = letters.initialLetters.split('');
 		updateUI(newletters);
   };
+
+  var space = function(){
+  	$('.sentence').append('  ');	
+  }
 
   updateUI(letters.initialLetters.split(''));
 });
