@@ -10,3 +10,82 @@
     text-shadow: $selection-ts;
   }
 }
+// Shared styles and dependencies
+// Globaly used variables, mixins, and functions
+
+
+// Metrics
+
+
+// Typography
+  $primary-sans:      'Open Sans', Arial, sans-serif;
+
+// Colors
+  // The Spectafy standard colors
+
+  $primary-font:    #434343; // p, titles
+  $secondary-font:  #717272; // copyright
+  $tertiary-font:   #9b9b9b; // discreet p
+  $quarternary-font:  #d8d8d8; // border and lightest
+
+  $borders:     #c7c8cc; // borders
+  $secondary-bg:    #f5f5f5; // highlighted gray background
+
+ @mixin breakpoint($point) {
+   @if $point == desktop {
+     @media (max-width: 1250px) { @content ; }
+  }
+   @else if $point == laptop {
+     @media (max-width: 1000px) { @content ; }
+  }
+  @else if $point == rufus {
+     @media (max-width: 850px) { @content ; }
+  }
+    @else if $point == tablet {
+     @media (max-width: 750px) { @content ; }
+  }
+  @else if $point == mobileonly {
+     @media (max-width: 600px)  { @content ; }
+
+  }
+  @else if $point == smallmobile {
+     @media (max-width: 450px)  { @content ; }
+
+  }
+}
+
+@mixin inner-content {
+  max-width:1200px;
+  width:80%;
+  margin:0 auto;
+}
+@mixin transformers {
+  transition-delay: 0s;
+    transition-duration: 0.25s;
+    transition-property: all;
+    transition-timing-function: ease-in;
+    -webkit-transition-delay: 0s;
+    -webkit-transition-duration: 0.25s;
+    -webkit-transition-property: all;
+    -webkit-transition-timing-function: ease-in;
+}
+@mixin slidingdowntown {
+  transition-delay: 0s;
+    transition-duration: 0.25s;
+    transition-property: top;
+    transition-timing-function: ease;
+    -webkit-transition-delay: 0s;
+    -webkit-transition-duration: 0.25s;
+    -webkit-transition-property: top;
+    -webkit-transition-timing-function: ease;
+}
+@mixin background_image_eric {
+  background-image:url(/media/surf.jpg);
+  background-repeat:no-repeat; // no-repeat
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position:relative;
+}

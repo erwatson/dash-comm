@@ -1,0 +1,11 @@
+body.dash_app_body {
+	background-color:$secondary-bg;
+	.row {
+		padding:2%;
+		button {
+			background-color:#fff;
+			border:3px solid $borders;
+			border-radius:5px;
+		}
+	}
+}
