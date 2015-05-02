@@ -17,6 +17,8 @@ img.tallpad {
 div.sentence{
   font-size: 24px;
   font-weight: 800;
+  text-align: center;
+  padding-top: 20px;
 }
 
 button.delete {
