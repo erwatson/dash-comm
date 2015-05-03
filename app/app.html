@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Communication app for ICU patients without ability to speak or use their hands.">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">  
-
     <link href="//www.google-analytics.com" rel="dns-prefetch">
     <link href="//ajax.googleapis.com" rel="dns-prefetch">
     <link href="assets/css/style.min.css" rel="stylesheet">
@@ -21,58 +21,66 @@
     <script src="/assets/js/letters.js"></script>
     <script src="/assets/js/app.js"></script>
 
+    <!-- fonts -->
+    <script src="//use.typekit.net/lwv1ado.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+
   </head>
-  <body>
+  <body class="dash_app_body">
 
     <header class="header" role="banner">
-      <div class="logo">
-        
+      <div class="header__contents">
+        <div class="header--logo">
+          <img src="/assets/img/dash_logo.svg">
+        </div>
+        <nav class="topnav" role="navigation">
+          <ul class="nav_ul">
+            <li>
+              <a href="/">Home</a>
+              <a href="#">Info</a>
+              <a href="#">Support</a>
+            </li>
+          </ul>
+        </nav> 
       </div>
-      <nav class="nav" role="navigation">
-        <ul>
-          <li>
-            <a href="index.html">Go Home</a>
-          </li>
-        </ul>
-      </nav>
     </header>
 
     <main class="main" role="main">
       <div class="container">
-		<div class="row clearfix">
-			<div class="col-md-12 column" >
-				 <button type="button" class="btn btn-block btn-lg tallpad border" id="buttonContent" onclick="console.log('hello')">Keywords</button>
-			</div>
-		</div>
-		<div class="row clearfix">
-			<div class="col-md-4 column">
-				 <button type="button" class="letterContainer first btn btn-block btn-lg tallpad border" id="buttonContent"></button>
-			</div>
-			<div class="col-md-4 column">
-				<h3 class="middle_text instruction-start">Select the first letter to begin writing</h3>
-        <div class="sentence"></div>
-			</div>
-			<div class="col-md-4 column">
-				 <button type="button" class="letterContainer second btn btn-block btn-lg tallpad border" id="buttonContent"></button>
-			</div>
-		</div>
-		<div class="row clearfix">
-			<div class="col-md-12 column">
-				 <button type="button" class="letterContainer third btn btn-lg btn-block tallpad border" id="buttonContent"></button>
-			</div>
-		</div>
-    <div class="row clearfix">
-      <div class="col-md-4 column">
-        <button class="btn btn-lg delete">Delete Previous Letter</button> 
-      </div>
-      <div class="col-md-2 column">
-        <button class="btn btn-lg space">Space</button> 
-      </div>
-      <div class="col-md-2 column">
-        <button class="btn btn-lg reset">Reset</button> 
-      </div>
-    </div>
-	  </div>
+    		<div class="row clearfix">
+    			<div class="col-md-12 column" >
+    				 <button type="button" class="btn btn-block btn-lg tallpad border top_btn content_btn" id="buttonContent" onclick="console.log('hello')">Keywords</button>
+    			</div>
+    		</div>
+    		<div class="row clearfix">
+    			<div class="col-md-4 column">
+    				 <button type="button" class="letterContainer first btn btn-block btn-lg tallpad border left_btn content_btn" id="buttonContent"></button>
+    			</div>
+    			<div class="col-md-4 column">
+    				<h3 class="middle_text instruction-start">Select the first letter to begin writing</h3>
+            <div class="sentence"></div>
+    			</div>
+    			<div class="col-md-4 column">
+    				 <button type="button" class="letterContainer second btn btn-block btn-lg right_btn content_btn tallpad border" id="buttonContent"></button>
+    			</div>
+    		</div>
+    		<div class="row clearfix">
+    			<div class="col-md-12 column">
+    				 <button type="button" class="letterContainer third btn btn-lg btn-block bottom_btn content_btn tallpad border" id="buttonContent"></button>
+    			</div>
+    		</div>
+        <div class="row clearfix">
+          <div class="col-md-4 column">
+            <button class="btn btn-lg delete">Delete Previous Letter</button> 
+          </div>
+          <div class="col-md-2 column">
+            <button class="btn btn-lg space">Space</button> 
+          </div>
+          <div class="col-md-2 column">
+            <button class="btn btn-lg reset">Reset</button> 
+          </div>
+        </div>
+	   </div>
     </main>
 
 
