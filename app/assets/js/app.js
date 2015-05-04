@@ -9,6 +9,7 @@ $(document).ready(function(){
   var updateUI = function(input){
   	if(input.length === 1){
   		appendAndReset(input);
+      $('.instruction-start').hide();
   	} else {		
 		  var letterContainers = document.getElementsByClassName('letterContainer');
 		  var containerLetters = letters.producesubSets(input);
@@ -47,6 +48,7 @@ $(document).ready(function(){
   $('.reset').on('click', function(){
   	$('.sentence').html('');
   	updateUI(letters.initialLetters.split(''))
+    $('.instruction-start').show();
   });
 
   $('.space').on('click', function(){
