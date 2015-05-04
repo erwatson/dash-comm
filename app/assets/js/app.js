@@ -1,19 +1,19 @@
 $(document).ready(function(){
 
   // find all of buttons (there should be 3), and call the produceSubsets function to populate the buttons 
-  console.log('hi');
+  console.log('hi there');
 
   var letters = new Letters("abcdefghijklmnopqrstuvwxyz");
 
   // this function will take the letterContainers and populate the button's innner html
   var updateUI = function(input){
-  	if(input.length === 1){
-  		appendAndReset(input);
+    $('.topBtn').text('keywords');
+    if(input.length === 1){
+      appendAndReset(input);
       $('.instruction-start').hide();
   	} else {		
 		  var letterContainers = document.getElementsByClassName('letterContainer');
 		  var containerLetters = letters.producesubSets(input);
-		  // console.log('containerLetters', containerLetters);
 	    for(var i = 0; i < letterContainers.length; i++){
 	    	if(i === 0){
 	    		var htmlLetters = containerLetters.firstThird;
@@ -31,6 +31,14 @@ $(document).ready(function(){
 	    }
   	}
   };
+
+  function showKeywords(){
+    console.log('showing keywords');
+    $('.first').text('Pain');
+    $('.second').text('Family');
+    $('.third').text('Nurse');
+    $('.topBtn').text('Back To Home');
+  }
 
   var deleteLastLetter = function(){
   	var currentStr = $('.sentence').html();
@@ -63,7 +71,20 @@ $(document).ready(function(){
 
   var space = function(){
   	$('.sentence').append('  ');	
-  }
+  };
+
+  var addKeywordFunctionality = (function(){
+    var showingKeywords = false;
+    $('.topBtn').on('click', function(){
+      if(!showingKeywords){
+        showingKeywords = true;
+        showKeywords();
+      } else {
+        showingKeywords = false;
+        updateUI(letters.initialLetters.split(''));
+      }
+    });
+  })();
 
   updateUI(letters.initialLetters.split(''));
 });
