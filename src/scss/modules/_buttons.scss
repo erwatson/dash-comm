@@ -1,21 +1,25 @@
 .content_btn {
 	font-family:$primary-sans;
-	color:$primary-font;
+	color:#fff;
 	text-transform:uppercase;
-	font-size:1.8rem;
+	font-size:2.4rem;
 	border:1px solid $borders;
 	background-color:#fff;
 	font-weight:600;
 }
 .top_btn {
 	border:3px solid $dash-orange;
+	background-color:$dash-orange;
 }
 .right_btn{
 	border:3px solid $dash-yellow;
+	background-color:$dash-yellow;
 }
 .left_btn {
 	border:3px solid $dash-green;
+	background-color:$dash-green;
 }
 .bottom_btn {
 	border:3px solid $dash-blue;
+	background-color:$dash-blue;
 }
