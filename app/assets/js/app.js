@@ -1,16 +1,25 @@
 $(document).ready(function(){
 
-  // find all of buttons (there should be 3), and call the produceSubsets function to populate the buttons 
   console.log('hi there');
 
   var letters = new Letters("abcdefghijklmnopqrstuvwxyz");
 
-  // this function will take the letterContainers and populate the button's innner html
-  var updateUI = function(input){
-    $('.topBtn').text('keywords');
+  var updateUI = function(input, reset){
+    var reset = reset || false;
+    if(reset){
+      $('.topBtn').text('keywords'); 
+      $('.topBtn').unbind('click');
+       addKeywordFunctionality();
+    } else {
+      $('.topBtn').text('Space | Delete');
+      $('.instruction-start').hide();
+      $('.topBtn').unbind('click');
+      $('.topBtn').on('click', function(){
+        toggleSpaceDelete();
+      });
+    }
     if(input.length === 1){
       appendAndReset(input);
-      $('.instruction-start').hide();
   	} else {		
 		  var letterContainers = document.getElementsByClassName('letterContainer');
 		  var containerLetters = letters.producesubSets(input);
@@ -18,22 +27,21 @@ $(document).ready(function(){
 	    	if(i === 0){
 	    		var htmlLetters = containerLetters.firstThird;
 		    	letterContainers[i].innerHTML = htmlLetters.join(' - ').toUpperCase();
-		    	letterContainers[i].onclick = function(){ updateUI(this.innerHTML.split(' - '))};
+		    	letterContainers[i].onclick = function(){ updateUI(this.innerHTML.split(' - '), false)};
 	    	} else if(i === 1){
 	    		var htmlLetters = containerLetters.middleThird;
 	    		letterContainers[i].innerHTML = htmlLetters.join(' - ').toUpperCase();
-	    		letterContainers[i].onclick = function(){ updateUI(this.innerHTML.split(' - '))};
+	    		letterContainers[i].onclick = function(){ updateUI(this.innerHTML.split(' - '), false)};
 	    	} else {
 	    		var htmlLetters = containerLetters.lastThird;
 	    		letterContainers[i].innerHTML = htmlLetters.join(' - ').toUpperCase();
-	    		letterContainers[i].onclick = function(){ updateUI(this.innerHTML.split(' - '))};
+	    		letterContainers[i].onclick = function(){ updateUI(this.innerHTML.split(' - '), false)};
 	    	}
 	    }
   	}
   };
 
   function showKeywords(){
-    console.log('showing keywords');
     $('.first').text('Pain');
     $('.second').text('Family');
     $('.third').text('Nurse');
@@ -47,15 +55,17 @@ $(document).ready(function(){
 	  	strArray.pop();
 	  	$('.sentence').html(strArray.join(''));
   	}
+    toggleSpaceDelete();
   }
 
   $('.delete').on('click', function(){
   	deleteLastLetter();
+    updateUI(letters.initialLetters.split(''));
   });
 
   $('.reset').on('click', function(){
   	$('.sentence').html('');
-  	updateUI(letters.initialLetters.split(''))
+  	updateUI(letters.initialLetters.split(''), true)
     $('.instruction-start').show();
   });
 
@@ -70,10 +80,11 @@ $(document).ready(function(){
   };
 
   var space = function(){
-  	$('.sentence').append('  ');	
+  	$('.sentence').append(' ');	
+    toggleSpaceDelete();
   };
 
-  var addKeywordFunctionality = (function(){
+  var addKeywordFunctionality = function(){
     var showingKeywords = false;
     $('.topBtn').on('click', function(){
       if(!showingKeywords){
@@ -81,12 +92,19 @@ $(document).ready(function(){
         showKeywords();
       } else {
         showingKeywords = false;
-        updateUI(letters.initialLetters.split(''));
+        updateUI(letters.initialLetters.split(''), true);
       }
     });
-  })();
+  };
 
-  updateUI(letters.initialLetters.split(''));
+  function toggleSpaceDelete(){
+    $('.second').toggle();
+    $('.delete').toggle();
+    $('.first').toggle();
+    $('.space').toggle();
+  }
+
+  updateUI(letters.initialLetters.split(''), true);
 });
 
 
