@@ -140,9 +140,9 @@ h3 {
   font-size: 1.8rem;
 }
 h3.middle_text {
-  font-size: 1.6rem;
-  font-weight: 400;
-  text-transform: uppercase;
+  font-size: 2.0rem;
+  font-weight: 600;
+  color: #585858;
   font-family: "freight-sans-pro", sans-serif;
 }
 
