@@ -7,7 +7,7 @@ $(document).ready(function(){
   var updateUI = function(input, reset){
     var reset = reset || false;
     if(reset){
-      $('.topBtn').text('keywords'); 
+      $('.topBtn').text('Keywords'); 
       $('.topBtn').unbind('click');
        addKeywordFunctionality();
     } else {

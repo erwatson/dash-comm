@@ -56,9 +56,8 @@ body .content--block {
 
 .content_btn {
   font-family: "freight-sans-pro", sans-serif;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 2.4rem;
+  color: #202020;
+  font-size: 2.5rem;
   border: 1px solid #c7c8cc;
   background-color: #fff;
   font-weight: 600;
@@ -66,22 +65,21 @@ body .content--block {
 
 .top_btn {
   border: 3px solid #DA611E;
-  background-color: #DA611E;
 }
 
 .right_btn {
   border: 3px solid #DDB307;
-  background-color: #DDB307;
+  text-transform: uppercase;
 }
 
 .left_btn {
   border: 3px solid #78BE20;
-  background-color: #78BE20;
+  text-transform: uppercase;
 }
 
 .bottom_btn {
   border: 3px solid #008EAA;
-  background-color: #008EAA;
+  text-transform: uppercase;
 }
 
 @font-face {
