@@ -2,12 +2,7 @@ button.tallpad {
   padding-bottom: 60px; 
   padding-top: 60px;
 }
-/*talk to cal*/
-/*button.border {
-	border-style: solid;
-	border-width: 3px;
-	border-color: #4d4d4d;
-}*/
+
 h3.middle_text {
 	text-align: center;
 }
@@ -16,17 +11,27 @@ img.tallpad {
   padding-top: 60px;
 }
 div.sentence{
-  font-size: 24px;
-  font-weight: 800;
+  font-size: 30px;
+  font-weight: 700;
   text-align: center;
-  padding-top: 20px;
+  padding-top: 40px;
+  text-decoration: underline;
 }
 
-button.delete {
-  background-color: red;
-  font-size: 18px;
+button.go {
+  font-size: 24px;
   border: 3px solid black;
-  color: white;
   letter-spacing: 1px;
+  font-weight: 600;
 }
 
+button.reset{
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  padding: 5px;
+}
+
+div.go {
+  text-align: center;
+  padding-top: 40px;
+}
