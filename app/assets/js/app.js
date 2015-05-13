@@ -102,6 +102,7 @@ $(document).ready(function(){
     $('.delete').toggle();
     $('.first').toggle();
     $('.space').toggle();
+    $('.third').toggle();
   }
 
   updateUI(letters.initialLetters.split(''), true);
