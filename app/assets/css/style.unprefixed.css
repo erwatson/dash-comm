@@ -7,8 +7,7 @@
  * Copyright 2013. MIT licensed.
  */
 
-.clear:before,
-.clear:after {
+.clear:before, .clear:after {
   content: ' ';
   display: table;
 }
@@ -16,7 +15,6 @@
 .clear {
   *zoom: 1;
 }
-
 .clear:after {
   clear: both;
 }
@@ -26,18 +24,15 @@ header {
   border-bottom: 1px solid #c7c8cc;
   padding: 1% 0px;
 }
-
 header .header__contents {
   max-width: 1200px;
   width: 80%;
   margin: 0 auto;
 }
-
 header .header__contents .header--logo {
   width: 59%;
   display: inline-block;
 }
-
 header .header__contents nav {
   width: 40%;
   text-align: right;
@@ -47,7 +42,6 @@ header .header__contents nav {
 body {
   background-color: #f5f5f5;
 }
-
 body .content--block {
   max-width: 1200px;
   width: 80%;
@@ -95,9 +89,7 @@ body .content--block {
   font-weight: normal;
   font-style: normal;
 }
-
 * {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -109,7 +101,6 @@ html {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
   line-height: 1.5;
 }
-
 @media (max-width: 750px) {
   html {
     font-size: 8px;
@@ -119,12 +110,10 @@ html {
 ul {
   list-style-type: disc;
 }
-
 ul.nav_ul {
   padding-left: 0px;
   list-style-type: none;
 }
-
 ul.nav_ul li a {
   color: #9b9b9b;
   font-family: "freight-sans-pro", sans-serif;
@@ -132,17 +121,11 @@ ul.nav_ul li a {
   text-transform: uppercase;
   padding: 0px 5px;
 }
-
 ul.nav_ul li a:hover {
   color: #008EAA;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: "bree-serif", sans-serif;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -156,7 +139,6 @@ h2 {
 h3 {
   font-size: 1.8rem;
 }
-
 h3.middle_text {
   font-size: 2.0rem;
   font-weight: 600;
@@ -188,7 +170,6 @@ p {
 body.dash_app_body {
   background-color: #f5f5f5;
 }
-
 body.dash_app_body .row {
   padding: 2%;
 }
@@ -239,10 +220,9 @@ body.dash_app_body .row {
     max-width: 100% !important;
   }
 
-@page {
+  @page {
     margin: 0.5cm;
-}
-
+  }
   p,
   h2,
   h3 {
