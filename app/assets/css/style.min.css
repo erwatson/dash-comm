@@ -60,8 +60,21 @@ body .content--block {
   margin-bottom: 2%;
 }
 
+body .content--block h1,
+body .content--block h2,
+body .content--block h3,
+body .content--block h4,
+body .content--block h5,
+body .content--block h6 {
+  color: #DA611E;
+}
+
+body .content--block.single_col {
+  width: 60%;
+}
+
 .content_btn {
-  font-family: "freight-sans-pro", sans-serif;
+  font-family: "merriweather", serif;
   color: #202020;
   font-size: 2.03rem;
   border: 1px solid #c7c8cc;
@@ -127,7 +140,7 @@ ul.nav_ul {
 
 ul.nav_ul li a {
   color: #9b9b9b;
-  font-family: "freight-sans-pro", sans-serif;
+  font-family: "lato", sans-serif;
   font-size: 1.4rem;
   text-transform: uppercase;
   padding: 0px 5px;
@@ -143,25 +156,26 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "bree-serif", sans-serif;
+  font-family: "lato", sans-serif;
   margin-top: 1rem;
   margin-bottom: 1rem;
   line-height: 1.5;
 }
 
 h2 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
+  font-weight: 400;
 }
 
 h3 {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
 }
 
 h3.middle_text {
   font-size: 2.0rem;
   font-weight: 600;
   color: #585858;
-  font-family: "freight-sans-pro", sans-serif;
+  font-family: "merriweather", serif;
 }
 
 h5 {
@@ -169,8 +183,9 @@ h5 {
 }
 
 p {
-  font-family: "freight-sans-pro", sans-serif;
+  font-family: "merriweather", serif;
   font-size: 1.6rem;
+  line-height: 1.5;
 }
 
 ::-moz-selection {
