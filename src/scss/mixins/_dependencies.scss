@@ -7,12 +7,14 @@
 
 // Typography
   $primary-sans:      "merriweather", serif;
-  $primary-sans-serif: "lato",sans-serif;;
+  $primary-serif:      "merriweather", serif;
+  $primary-sans-serif: "lato",sans-serif;
 
 // Colors
   // The Spectafy standard colors
 
-  $primary-font:      #434343; // p, titles
+  $primary-font:      #434343; // titles
+  $p-font:            #6A6A6A; // p
   $secondary-font:    #717272; // copyright
   $tertiary-font:     #9b9b9b; // discreet p
   $quarternary-font:  #d8d8d8; // border and lightest

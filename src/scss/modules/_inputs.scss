@@ -1,0 +1,41 @@
+
+//mailchimp
+
+//buttons
+input.mailchimpbutton {
+  background-color:$dash-blue;
+  box-shadow:0 -3px 0 rgba(0, 0, 0, 0.15) inset;
+  border:none;
+  padding:2% 3%;
+  color:#fff;
+  font-size:1.6rem;
+  border-radius:.25rem;
+  text-transform:uppercase;
+  font-family:$primary-sans-serif;
+  margin-left:0px;
+  display:inline-block;
+  width:30%;
+}
+// form
+input.mailchimpforminput {
+  display:inline-block;
+  width:69%;
+  border-radius:.25rem;
+  color:$secondary-font;
+  background-color:#fff;
+  max-width:35rem;
+  text-align:left;
+  font-family:$primary-sans-serif;
+  font-weight:400;
+  padding:.6rem 2rem;
+  font-size:1.8rem;
+  margin-right:0px;
+  margin-bottom:2.5%;
+  border:2px solid $dash-blue;
+  &.email {
+    background-image:url(/assets/img/email_form.svg);
+    background-repeat: no-repeat;
+    background-position:14px center;
+    padding-left:4rem;
+  }
+}
