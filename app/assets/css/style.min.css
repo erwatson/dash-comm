@@ -84,7 +84,7 @@ body.dash_index {
 }
 
 body.dash_index .main {
-  margin-top: 15%;
+  margin-top: 10%;
 }
 
 .left_block {
@@ -128,31 +128,31 @@ input.mailchimpbutton {
   background-color: #008EAA;
   box-shadow: 0 -3px 0 rgba(0, 0, 0, 0.15) inset;
   border: none;
-  padding: 2% 3%;
   color: #fff;
   font-size: 1.6rem;
-  border-radius: .25rem;
+  letter-spacing: 1px;
+  padding: 1rem 2.3rem;
+  border-radius: 4px;
   text-transform: uppercase;
   font-family: "lato", sans-serif;
   margin-left: 0px;
-  display: inline-block;
-  width: 30%;
+  display: block;
+  margin-top: 5%;
 }
 
 input.mailchimpforminput {
-  display: inline-block;
-  width: 69%;
+  display: block;
+  margin-top: 4%;
+  margin-bottom: 5%;
   border-radius: .25rem;
   color: #717272;
   background-color: #fff;
   max-width: 35rem;
   text-align: left;
+  padding: 6px;
   font-family: "lato", sans-serif;
   font-weight: 400;
-  padding: .6rem 2rem;
-  font-size: 1.8rem;
-  margin-right: 0px;
-  margin-bottom: 2.5%;
+  font-size: 2rem;
   border: 2px solid #008EAA;
 }
 
@@ -160,7 +160,7 @@ input.mailchimpforminput.email {
   background-image: url(/assets/img/email_form.svg);
   background-repeat: no-repeat;
   background-position: 14px center;
-  padding-left: 4rem;
+  padding-left: 5rem;
 }
 
 @font-face {
@@ -231,7 +231,8 @@ h1 {
 }
 
 h2 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
+  color: #008EAA;
 }
 
 h3 {
@@ -253,6 +254,7 @@ p {
   font-family: "merriweather", serif;
   font-size: 1.6rem;
   color: #6A6A6A;
+  line-height: 1.7;
 }
 
 ::-moz-selection {
