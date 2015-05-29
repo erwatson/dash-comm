@@ -9,7 +9,7 @@ $(document).ready(function(){
     if(reset){
       $('.topBtn').text('Keywords'); 
       $('.topBtn').unbind('click');
-       addKeywordFunctionality();
+      addKeywordFunctionality();
     } else {
       $('.topBtn').text('Space | Delete');
       $('.instruction-start').hide();
@@ -46,6 +46,9 @@ $(document).ready(function(){
     $('.second').text('Family');
     $('.third').text('Nurse');
     $('.topBtn').text('Back To Home');
+    $('.keywords-text').toggle();
+    $('.letters-text').toggle();
+
   }
 
   var deleteLastLetter = function(){
@@ -67,6 +70,8 @@ $(document).ready(function(){
   	$('.sentence').html('');
   	updateUI(letters.initialLetters.split(''), true)
     $('.instruction-start').show();
+    $('.keywords-text').css('display', 'none');
+
   });
 
   $('.space').on('click', function(){
@@ -93,6 +98,7 @@ $(document).ready(function(){
       } else {
         showingKeywords = false;
         updateUI(letters.initialLetters.split(''), true);
+        $('.keywords-text').toggle();
       }
     });
   };
