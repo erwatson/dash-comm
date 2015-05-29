@@ -71,11 +71,9 @@ body.dash_index {
   min-height: 100%;
 }
 
-.main {
-  padding: 6% 7%;
-  width: 80%;
-}
 body.dash_index .main {
+  padding: 6% 7%;
+  width: 85%;
   margin-top: 10%;
 }
 
@@ -232,8 +230,18 @@ h5 {
 p {
   font-family: "merriweather", serif;
   font-size: 1.6rem;
-  color: #6A6A6A;
+  color: #5a5a5a;
   line-height: 1.7;
+}
+p.discreet {
+  color: #9b9b9b;
+  font-style: italic;
+  font-family: "lato", sans-serif;
+  margin-top: 1%;
+}
+
+.t-center {
+  text-align: center;
 }
 
 ::-moz-selection {
@@ -251,8 +259,48 @@ p {
 body.dash_app_body {
   background-color: #f5f5f5;
 }
-body.dash_app_body .row {
-  padding: 2%;
+
+.top_selector {
+  margin-top: 1%;
+}
+
+.main_contents {
+  min-width: 700px;
+}
+
+.middle_selector {
+  margin: 2% 0px;
+}
+@media (max-width: 1120px) {
+  .middle_selector .content_btn {
+    font-size: 1.7rem;
+  }
+}
+@media (max-width: 775px) {
+  .middle_selector .content_btn {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 775px) {
+  .middle_selector .middlecol {
+    margin-right: 2%;
+  }
+}
+
+.fullcol {
+  display: inline-block;
+  width: 100%;
+}
+
+.thirdcol {
+  display: inline-block;
+  width: 33%;
+  vertical-align: top;
+}
+@media (max-width: 775px) {
+  .thirdcol {
+    width: 32%;
+  }
 }
 
 @media print {

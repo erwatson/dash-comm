@@ -25,12 +25,10 @@ body {
 	top: 0px;
 	min-height: 100%;
 }
-.main {
+body.dash_index .main {
 	padding:6% 7%;
-	width:80%;
-	body.dash_index & {
-		margin-top:10%;
-	}
+	width:85%;
+	margin-top:10%;
 }
 .left_block{
 	width: 50%;

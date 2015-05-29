@@ -76,4 +76,13 @@ p {
   font-size:1.6rem;
   color:$p-font;
   line-height:1.7;
+  &.discreet {
+    color:$tertiary-font;
+    font-style:italic;
+    font-family:$primary-sans-serif;
+    margin-top:1%;
+  }
+}
+.t-center {
+  text-align:center;
 }

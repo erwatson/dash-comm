@@ -1,6 +1,40 @@
 body.dash_app_body {
 	background-color:$secondary-bg;
-	.row {
-		padding:2%;
+}
+.top_selector {
+	margin-top:1%;
+}
+.main_contents {
+	min-width:700px;
+}
+.middle_selector {
+	margin:2% 0px;
+	.content_btn {
+		@include breakpoint(buttonone) {
+      		font-size:1.7rem;
+  		}
+  		@include breakpoint(buttontwo) {
+      		font-size:1.5rem;
+  		}
 	}
+	.middlecol {
+		@include breakpoint(buttontwo) {
+      		margin-right:2%;
+  		}
+	}
+}
+.bottom_selector {
+
+}
+.fullcol {
+	display:inline-block;
+	width:100%;
+}
+.thirdcol {
+	display:inline-block;
+	width:33%;
+	vertical-align:top;
+	@include breakpoint(buttontwo) {
+      	width:32%;
+  	}
 }
