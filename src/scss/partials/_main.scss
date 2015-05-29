@@ -9,4 +9,31 @@ body {
 		margin-top:2%;
 		margin-bottom:2%;
 	}
+	&.dash_index {
+		background-color:#fff;
+	}
+}
+#page_wrapper {
+	min-width: 320px;
+	height: 100%;
+	background-color:#fff;
+}
+.right_block {
+	width: 50%;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	min-height: 100%;
+}
+.main {
+	padding:6% 7%;
+}
+.left_block{
+	width: 50%;
+	background-color:$dash-orange;
+	display:block;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	min-height:100%;
 }
