@@ -99,6 +99,7 @@ $(document).ready(function(){
         showingKeywords = false;
         updateUI(letters.initialLetters.split(''), true);
         $('.keywords-text').toggle();
+        $('.letters-text').toggle();
       }
     });
   };
