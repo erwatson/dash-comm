@@ -17,21 +17,21 @@ div.sentence{
   padding-top: 40px;
   text-decoration: underline;
 }
-
+/*
 button.go {
   font-size: 24px;
   border: 3px solid black;
   letter-spacing: 1px;
   font-weight: 600;
 }
-
+*/
 button.reset{
   font-size: 1.4rem;
   text-transform: uppercase;
   padding: 5px;
 }
 
-div.go {
+/*div.go {
   text-align: center;
   padding-top: 40px;
-}
+}*/

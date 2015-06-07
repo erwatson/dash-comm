@@ -30,3 +30,30 @@
 //       width:33.3333%;
 // 	 }
 // }
+
+.go {
+	background-color:$dash-blue;
+	  box-shadow:0 -3px 0 rgba(0, 0, 0, 0.15) inset;
+	  border:none;
+	  color:#fff;
+	  font-size:2rem;
+	  letter-spacing:1px;
+	  padding:1rem 2.3rem;
+	  border-radius:4px;
+	  text-transform:uppercase;
+	  font-family:$primary-sans-serif;
+	  margin-left:0px;
+	  display:block;
+	  margin-top:3%;
+	  width:240px;
+	  text-align:center;
+	  a {
+	  	color:#fff;
+	  	text-decoration:none;
+	  }
+	  &:hover {
+	  	background-color:$dash-green;
+	  	color:#fff;
+	  	text-decoration:none;
+	  }
+}

@@ -19,7 +19,7 @@ body {
 	background-color:#fff;
 }
 .right_block {
-	width: 50%;
+	width: 55%;
 	position: absolute;
 	right: 0px;
 	top: 0px;
@@ -31,8 +31,9 @@ body.dash_index .main {
 	margin-top:10%;
 }
 .left_block{
-	width: 50%;
+	width: 45%;
 	background:url(/assets/img/green.svg) no-repeat 30% 30%;
+	background-color:$dash-blue;
 	position: fixed;
 	left: 0px;
 	top: 0px;

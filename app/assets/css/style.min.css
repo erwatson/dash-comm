@@ -71,7 +71,7 @@ body.dash_index {
 }
 
 .right_block {
-  width: 50%;
+  width: 55%;
   position: absolute;
   right: 0px;
   top: 0px;
@@ -85,8 +85,9 @@ body.dash_index .main {
 }
 
 .left_block {
-  width: 50%;
+  width: 45%;
   background: url(/assets/img/green.svg) no-repeat 30% 30%;
+  background-color: #008EAA;
   position: fixed;
   left: 0px;
   top: 0px;
@@ -119,6 +120,35 @@ body.dash_index .main {
 .bottom_btn {
   border: 3px solid #008EAA;
   text-transform: uppercase;
+}
+
+.go {
+  background-color: #008EAA;
+  box-shadow: 0 -3px 0 rgba(0, 0, 0, 0.15) inset;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  padding: 1rem 2.3rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-family: "lato", sans-serif;
+  margin-left: 0px;
+  display: block;
+  margin-top: 3%;
+  width: 240px;
+  text-align: center;
+}
+
+.go a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.go:hover {
+  background-color: #78BE20;
+  color: #fff;
+  text-decoration: none;
 }
 
 input.mailchimpbutton {
@@ -188,6 +218,12 @@ html {
   }
 }
 
+ol.instruction_list li {
+  font-family: "merriweather", serif;
+  font-size: 2rem;
+  padding: 2% 0px;
+}
+
 ul {
   list-style-type: disc;
 }
@@ -199,7 +235,7 @@ ul.nav_ul {
 
 ul.nav_ul li a {
   color: #9b9b9b;
-  font-family: "merriweather", serif;
+  font-family: "lato", sans-serif;
   font-size: 1.4rem;
   text-transform: uppercase;
   padding: 0px 5px;
