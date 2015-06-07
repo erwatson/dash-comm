@@ -86,7 +86,6 @@ body.dash_index .main {
 
 .left_block {
   width: 45%;
-  background: url(/assets/img/green.svg) no-repeat 30% 30%;
   background-color: #008EAA;
   position: fixed;
   left: 0px;
