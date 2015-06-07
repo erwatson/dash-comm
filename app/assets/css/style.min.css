@@ -61,7 +61,7 @@ body .content--block {
 }
 
 body.dash_index {
-  background-color: #fff;
+  background-color: #008EAA;
 }
 
 #page_wrapper {
@@ -76,6 +76,7 @@ body.dash_index {
   right: 0px;
   top: 0px;
   min-height: 100%;
+  background-color: #fff;
 }
 
 body.dash_index .main {
@@ -86,6 +87,7 @@ body.dash_index .main {
 
 .left_block {
   width: 45%;
+  background: url(/assets/img/green.svg) no-repeat 30% 30%;
   background-color: #008EAA;
   position: fixed;
   left: 0px;
