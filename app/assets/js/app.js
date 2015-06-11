@@ -5,14 +5,16 @@ $(document).ready(function(){
   var letters = new Letters("abcdefghijklmnopqrstuvwxyz");
 
   var updateUI = function(input, reset){
-    console.log('reset happening');
     var reset = reset || false;
     if(reset){
+      // this will get called on any reset of the entire UI
       // handle the css here
       $('#backHome').hide();
       $('#spaceDeleteBack').hide();
       $('#keywords').show();
       $('.letters-text').show();
+      $('.space-delete-back-text').hide();
+      $('.keywords-text').hide();
       // assign functionality here
       $('#keywords').click(function(){
         showKeywords();
@@ -22,15 +24,16 @@ $(document).ready(function(){
       });
       $('#spaceDeleteBack').click(function(){
         console.log('this will happen on SDB');
+        toggleSpaceDeleteBack();
       });
     } else {
-      $('#keywords').css('display', 'none');
-      $('#backHome').css('display', 'none');
-      $('#spaceDeleteBack').css('display', 'block');
+      // this will get called whenever a letterContainer gets pressed 
+      $('#keywords').hide();
+      $('#backHome').hide();
+      $('#spaceDeleteBack').show();
       $('.letters-text').hide();
-      $('.topBtn').unbind('click');
-      $('.topBtn').on('click', function(){
-        toggleSpaceDelete();
+      $('.spaceDeleteBack').click(function(){
+        toggleSpaceDeleteBack();
       });
     }
     if(input.length === 1){
@@ -122,14 +125,20 @@ $(document).ready(function(){
     });
   };
 
-  function toggleSpaceDelete(){
-    $('.second').toggle();
-    $('.delete').toggle();
-    $('.first').toggle();
-    $('.space').toggle();
-    $('.third').toggle();
-    $('#buttonContent').toggle();
-    $('.back-to-home').toggle();
+  function toggleSpaceDeleteBack(){
+    // $('.first').toggle();
+    // $('.second').toggle();
+    // $('.third').toggle();
+    console.log('sdb working');
+    $('#spaceDeleteBack').hide();
+    $('.letterContainer').hide();
+    $('#backHome').show();
+    
+    // these are the operations to show
+    $('#delete').show();
+    $('#space').show();
+    $('#back').show();
+    // assign functionality here
   }
 
   updateUI(letters.initialLetters.split(''), true);
