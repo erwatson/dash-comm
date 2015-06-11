@@ -9,6 +9,8 @@ $(document).ready(function(){
     if(reset){
       // this will get called on any reset of the entire UI
       // handle the css here
+      $('.sentence').html('');
+      $('.instruction-start').show();
       $('#backHome').hide();
       $('#spaceDeleteBack').hide();
       $('#keywords').show();
@@ -88,11 +90,7 @@ $(document).ready(function(){
   });
 
   $('.reset').on('click', function(){
-  	$('.sentence').html('');
-  	updateUI(letters.initialLetters.split(''), true)
-    $('.instruction-start').show();
-    $('.keywords-text').css('display', 'none');
-
+  	updateUI(letters.initialLetters.split(''), true);
   });
 
   $('.space').on('click', function(){
