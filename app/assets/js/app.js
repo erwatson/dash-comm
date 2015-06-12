@@ -27,7 +27,7 @@ $(document).ready(function(){
       $('.keywords-text').hide();
       // assign functionality here
     } else if(appStatus.isTyping){
-      // this will get called whenever a letterContainer gets pressed 
+      // this will get called whenever a letterContainer gets pressed --> appStatus.isTyping ===s true
       $('#keywords').hide();
       $('#backHome').hide();
       $('#spaceDeleteBack').show();
@@ -52,21 +52,21 @@ $(document).ready(function(){
           letterContainers[i].innerHTML = htmlLetters.join(' - ').toUpperCase();
           letterContainers[i].onclick = function(){ 
             appStatus.isTyping = true;
-            updateUI(this.innerHTML.split(' - '), false)
+            updateUI(this.innerHTML.split(' - '), false);
           };
         } else if(i === 1){
           var htmlLetters = containerLetters.middleThird;
           letterContainers[i].innerHTML = htmlLetters.join(' - ').toUpperCase();
           letterContainers[i].onclick = function(){ 
             appStatus.isTyping = true;
-            updateUI(this.innerHTML.split(' - '), false)
+            updateUI(this.innerHTML.split(' - '), false);
           };
         } else {
           var htmlLetters = containerLetters.lastThird;
           letterContainers[i].innerHTML = htmlLetters.join(' - ').toUpperCase();
           letterContainers[i].onclick = function(){ 
             appStatus.isTyping = true;
-            updateUI(this.innerHTML.split(' - '), false)
+            updateUI(this.innerHTML.split(' - '), false);
           };
         }
       }
@@ -118,7 +118,7 @@ $(document).ready(function(){
       $('.letters-text').show();
       appStatus.keywordsShowing = false;    
     } else {
-      toggleSpaceDeleteBack()
+      toggleSpaceDeleteBack();
     }
     // toggleSpaceDeleteBack();
   }
@@ -156,6 +156,7 @@ $(document).ready(function(){
     $('#spaceDeleteBack').toggle();
     $('.letterContainer').toggle();
     $('#backHome').toggle();
+    $('.space-delete-back-text').toggle();
     
     // these are the operations to show
     $('#delete').toggle();
