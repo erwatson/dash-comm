@@ -75,7 +75,7 @@ $(document).ready(function(){
     }
   };
 
-  // Assign Button Functionality Here - delete, reset, back, space
+  // Assign Button Functionality Here - delete, reset, back, space, keywords, backToHome, SpaceDeleteReset
   $('#delete').click(function(){
     deleteLastLetter();
     updateUI(letters.initialLetters.split(''));
