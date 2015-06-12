@@ -26,11 +26,9 @@ $(document).ready(function(){
       $('#space').hide();
       $('#back').hide();
       $('#delete').hide();
-      $('.third').show();
-      // assign functionality here
     } else if(appStatus.isTyping){
       // this will get called whenever a letterContainer gets pressed --> appStatus.isTyping === true
-      $('.third').show();
+      $('.letterContainer').show();
       $('#keywords').hide();
       $('#backHome').hide();
       $('.keywords-text').hide();
@@ -97,7 +95,7 @@ $(document).ready(function(){
   });
 
   $('#back').click(function(){
-    console.log('do the back functionality');
+    goBack();
   });
 
   $('#keywords').click(function(){
@@ -166,7 +164,7 @@ $(document).ready(function(){
     $('.letters-text').toggle();
   };
 
-  var deleteLastLetter = function(){
+  function deleteLastLetter(){
     var currentStr = $('.sentence').html();
     if(currentStr.length){  
       var strArray = currentStr.split('');
@@ -175,6 +173,11 @@ $(document).ready(function(){
     }
     toggleSpaceDeleteBack();
   };
+
+  function goBack(){
+    showHome();
+    updateUI(letters.initialLetters.split(''));
+  }
 
   updateUI(letters.initialLetters.split(''), true);
 });
@@ -191,7 +194,7 @@ $(document).ready(function(){
      // a. first thing to do is take out the reset functionality.  
      // b. refactor the container onclicks to take up less code 
 
-
+// 3. the ".third" patch
 
 
 
