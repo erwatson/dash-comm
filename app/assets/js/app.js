@@ -26,9 +26,11 @@ $(document).ready(function(){
       $('#space').hide();
       $('#back').hide();
       $('#delete').hide();
+      $('.third').show();
       // assign functionality here
     } else if(appStatus.isTyping){
-      // this will get called whenever a letterContainer gets pressed --> appStatus.isTyping ===s true
+      // this will get called whenever a letterContainer gets pressed --> appStatus.isTyping === true
+      $('.third').show();
       $('#keywords').hide();
       $('#backHome').hide();
       $('.keywords-text').hide();
@@ -65,12 +67,16 @@ $(document).ready(function(){
             updateUI(this.innerHTML.split(' - '), false);
           };
         } else {
-          var htmlLetters = containerLetters.lastThird;
-          letterContainers[i].innerHTML = htmlLetters.join(' - ').toUpperCase();
-          letterContainers[i].onclick = function(){ 
-            appStatus.isTyping = true;
-            updateUI(this.innerHTML.split(' - '), false);
-          };
+          if(containerLetters.lastThird.length > 0){
+            var htmlLetters = containerLetters.lastThird;
+            letterContainers[i].innerHTML = htmlLetters.join(' - ').toUpperCase();
+            letterContainers[i].onclick = function(){ 
+              appStatus.isTyping = true;
+              updateUI(this.innerHTML.split(' - '), false);
+            };
+          } else {
+            $('.third').hide();
+          }
         }
       }
     }
