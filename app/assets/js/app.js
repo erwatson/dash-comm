@@ -2,11 +2,18 @@ $(document).ready(function(){
 
   console.log('hi there');
 
+  var appStatus = {
+    keywordsShowing: false,
+    isTyping: false,
+  }
   var letters = new Letters("abcdefghijklmnopqrstuvwxyz");
 
   var updateUI = function(input, reset){
     var reset = reset || false;
+    console.log('typing status', appStatus.isTyping)
     if(reset){
+      appStatus.keywordsShowing = false;
+      appStatus.isTyping = false;
       // this will get called on any reset of the entire UI
       // handle the css here
       $('.sentence').html('');
@@ -18,15 +25,20 @@ $(document).ready(function(){
       $('.space-delete-back-text').hide();
       $('.keywords-text').hide();
       // assign functionality here
-    } else {
+    } else if(appStatus.isTyping){
       // this will get called whenever a letterContainer gets pressed 
       $('#keywords').hide();
       $('#backHome').hide();
       $('#spaceDeleteBack').show();
       $('.letters-text').hide();
-      $('.spaceDeleteBack').click(function(){
-        toggleSpaceDeleteBack();
-      });
+    } else {
+      $('.instruction-start').show();
+      $('#backHome').hide();
+      $('#spaceDeleteBack').hide();
+      $('#keywords').show();
+      $('.letters-text').show();
+      $('.space-delete-back-text').hide();
+      $('.keywords-text').hide();  
     }
     if(input.length === 1){
       console.log('appening item')
@@ -38,41 +50,28 @@ $(document).ready(function(){
         if(i === 0){
           var htmlLetters = containerLetters.firstThird;
           letterContainers[i].innerHTML = htmlLetters.join(' - ').toUpperCase();
-          letterContainers[i].onclick = function(){ updateUI(this.innerHTML.split(' - '), false)};
+          letterContainers[i].onclick = function(){ 
+            appStatus.isTyping = true;
+            updateUI(this.innerHTML.split(' - '), false)
+          };
         } else if(i === 1){
           var htmlLetters = containerLetters.middleThird;
           letterContainers[i].innerHTML = htmlLetters.join(' - ').toUpperCase();
-          letterContainers[i].onclick = function(){ updateUI(this.innerHTML.split(' - '), false)};
+          letterContainers[i].onclick = function(){ 
+            appStatus.isTyping = true;
+            updateUI(this.innerHTML.split(' - '), false)
+          };
         } else {
           var htmlLetters = containerLetters.lastThird;
           letterContainers[i].innerHTML = htmlLetters.join(' - ').toUpperCase();
-          letterContainers[i].onclick = function(){ updateUI(this.innerHTML.split(' - '), false)};
+          letterContainers[i].onclick = function(){ 
+            appStatus.isTyping = true;
+            updateUI(this.innerHTML.split(' - '), false)
+          };
         }
       }
     }
   };
-
-
-  function showKeywords(){
-    console.log('showing keywords')
-    $('.first').text('Pain');
-    $('.second').text('Family');
-    $('.third').text('Nurse');
-    $('#backHome').toggle();
-    $('#keywords').toggle();
-    $('.keywords-text').toggle();
-    $('.letters-text').toggle();
-  }
-
-  var deleteLastLetter = function(){
-    var currentStr = $('.sentence').html();
-    if(currentStr.length){  
-      var strArray = currentStr.split('');
-      strArray.pop();
-      $('.sentence').html(strArray.join(''));
-    }
-    toggleSpaceDelete();
-  }
 
   // Assign Button Functionality Here - delete, reset, back, space
   $('#delete').click(function(){
@@ -97,12 +96,27 @@ $(document).ready(function(){
   });
 
   $('#backHome').click(function(){
-    console.log('this will happen on backHome');
+    showHome();
+    updateUI(letters.initialLetters.split(''));
   });
+
   $('#spaceDeleteBack').click(function(){
     toggleSpaceDeleteBack();
   });
   
+  // move to helpers.js
+  var showHome = function(){
+    console.log('showhome pressed');
+    if(appStatus.keywordsShowing){
+      $('#keywords').show();
+      $('#backHome').hide();
+      $('.keywords-text').hide();
+      $('.letters-text').show();
+    }
+    appStatus.keywordsShowing = false;    
+    // toggleSpaceDeleteBack();
+  }
+
   // move to helpers.js
   var appendAndReset = function(input){
     $('.sentence').append(input);
@@ -113,7 +127,7 @@ $(document).ready(function(){
   // move to helpers.js
   var space = function(){
     $('.sentence').append(' '); 
-    toggleSpaceDelete();
+    toggleSpaceDeleteBack();
   };
 
   // move to helpers.js
@@ -136,16 +150,37 @@ $(document).ready(function(){
     // $('.first').toggle();
     // $('.second').toggle();
     // $('.third').toggle();
-    console.log('sdb working');
-    $('#spaceDeleteBack').hide();
-    $('.letterContainer').hide();
-    $('#backHome').show();
+    $('#spaceDeleteBack').toggle();
+    $('.letterContainer').toggle();
+    $('#backHome').toggle();
     
     // these are the operations to show
-    $('#delete').show();
-    $('#space').show();
-    $('#back').show();
+    $('#delete').toggle();
+    $('#space').toggle();
+    $('#back').toggle();
   }
+
+  function showKeywords(){
+    appStatus.keywordsShowing = true;
+    $('.first').text('Pain');
+    $('.second').text('Family');
+    $('.third').text('Nurse');
+    $('#backHome').toggle();
+    $('#keywords').toggle();
+    $('.keywords-text').toggle();
+    $('.letters-text').toggle();
+  }
+
+  var deleteLastLetter = function(){
+    var currentStr = $('.sentence').html();
+    if(currentStr.length){  
+      var strArray = currentStr.split('');
+      strArray.pop();
+      $('.sentence').html(strArray.join(''));
+    }
+    toggleSpaceDeleteBack();
+  }
+
 
   updateUI(letters.initialLetters.split(''), true);
 });
