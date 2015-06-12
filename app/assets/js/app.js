@@ -34,7 +34,7 @@ $(document).ready(function(){
       $('#spaceDeleteBack').show();
       $('.letters-text').hide();
     } else {
-      console.log('the other ELSE got called typingStatus', appStatus.typingStatus);
+      // this gets called if a user presses keywords right off the bat, then click goBackHome
       $('.instruction-start').show();
       $('#backHome').hide();
       $('#spaceDeleteBack').hide();
@@ -99,8 +99,6 @@ $(document).ready(function(){
 
   $('#backHome').click(function(){
     showHome();
-    console.log('keywords showing - ', appStatus.keywordsShowing);
-    // updateUI(letters.initialLetters.split(''));
   });
 
   $('#spaceDeleteBack').click(function(){
@@ -121,7 +119,6 @@ $(document).ready(function(){
       appStatus.keywordsShowing = false;
       updateUI(letters.initialLetters.split(''));   
     } else {
-      console.log('keywords not showing - toggle SPB')
       toggleSpaceDeleteBack();
     }
   };
