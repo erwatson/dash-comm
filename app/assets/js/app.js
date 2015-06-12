@@ -46,8 +46,10 @@ $(document).ready(function(){
       $('.keywords-text').hide();  
     }
     if(input.length === 1){
+      console.log('this is happening -> input.length === 1 ')
       appendAndReset(input);
     } else {
+      console.log('then this is happening')
       var letterContainers = document.getElementsByClassName('letterContainer');
       var containerLetters = letters.producesubSets(input);
       for(var i = 0; i < letterContainers.length; i++){
@@ -102,7 +104,7 @@ $(document).ready(function(){
   $('#backHome').click(function(){
     showHome();
     console.log('keywords showing - ', appStatus.keywordsShowing);
-    updateUI(letters.initialLetters.split(''));
+    // updateUI(letters.initialLetters.split(''));
   });
 
   $('#spaceDeleteBack').click(function(){
@@ -114,39 +116,38 @@ $(document).ready(function(){
   //////// HELPER FUNCTIONS - MODIFY THE UI ////////////
   //////////////////////////////////////////////////////
 
-  var showHome = function(){
+  function showHome(){
     if(appStatus.keywordsShowing){
       $('#keywords').show();
       $('#backHome').hide();
       $('.keywords-text').hide();
       $('.letters-text').show();
-      appStatus.keywordsShowing = false;    
+      appStatus.keywordsShowing = false;
+      updateUI(letters.initialLetters.split(''));   
     } else {
       toggleSpaceDeleteBack();
     }
   };
 
-  var appendAndReset = function(input){
+  function appendAndReset(input){
     $('.sentence').append(input);
     var newletters = letters.initialLetters.split('');
     updateUI(newletters);
   };
 
-  var addSpace = function(){
+  function addSpace(){
     $('.sentence').append(' '); 
     toggleSpaceDeleteBack();
   };
 
   function toggleSpaceDeleteBack(){
-    // $('.first').toggle();
-    // $('.second').toggle();
-    // $('.third').toggle();
+    // these are the operations to hide
     $('#spaceDeleteBack').toggle();
     $('.letterContainer').toggle();
-    $('#backHome').toggle();
-    $('.space-delete-back-text').toggle();
     
     // these are the operations to show
+    $('#backHome').toggle();
+    $('.space-delete-back-text').toggle();
     $('#delete').toggle();
     $('#space').toggle();
     $('#back').toggle();
