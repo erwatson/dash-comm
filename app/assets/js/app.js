@@ -1,7 +1,5 @@
 $(document).ready(function(){
 
-  console.log('hi there');
-
   var appStatus = {
     keywordsShowing: false,
     isTyping: false,
@@ -9,8 +7,7 @@ $(document).ready(function(){
   var letters = new Letters("abcdefghijklmnopqrstuvwxyz");
 
   var updateUI = function(input, reset){
-    var reset = reset || false;
-    console.log('typing status', appStatus.isTyping)
+    reset = reset || false;
     if(reset){
       // reset the app settings;
       appStatus.keywordsShowing = false;
@@ -37,6 +34,7 @@ $(document).ready(function(){
       $('#spaceDeleteBack').show();
       $('.letters-text').hide();
     } else {
+      console.log('the other ELSE got called typingStatus', appStatus.typingStatus);
       $('.instruction-start').show();
       $('#backHome').hide();
       $('#spaceDeleteBack').hide();
@@ -46,10 +44,8 @@ $(document).ready(function(){
       $('.keywords-text').hide();  
     }
     if(input.length === 1){
-      console.log('this is happening -> input.length === 1 ')
       appendAndReset(input);
     } else {
-      console.log('then this is happening')
       var letterContainers = document.getElementsByClassName('letterContainer');
       var containerLetters = letters.producesubSets(input);
       for(var i = 0; i < letterContainers.length; i++){
@@ -125,6 +121,7 @@ $(document).ready(function(){
       appStatus.keywordsShowing = false;
       updateUI(letters.initialLetters.split(''));   
     } else {
+      console.log('keywords not showing - toggle SPB')
       toggleSpaceDeleteBack();
     }
   };
@@ -132,6 +129,7 @@ $(document).ready(function(){
   function appendAndReset(input){
     $('.sentence').append(input);
     var newletters = letters.initialLetters.split('');
+    appStatus.keywordsShowing = false;
     updateUI(newletters);
   };
 
@@ -183,12 +181,11 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
-
+// FUTURE CONSIDERATIONS 
+// 1. Refactor PAIN | NURSE | FAMILY to its own set of buttons similar to space | delete | back and toggle those buttons instead of modifying innerHTML
+// 2. Refactor the updateUI function 
+     // a. first thing to do is take out the reset functionality.  
+     // b. refactor the container onclicks to take up less code 
 
 
 
