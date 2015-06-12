@@ -25,11 +25,15 @@ $(document).ready(function(){
       $('.letters-text').show();
       $('.space-delete-back-text').hide();
       $('.keywords-text').hide();
+      $('#space').hide();
+      $('#back').hide();
+      $('#delete').hide();
       // assign functionality here
     } else if(appStatus.isTyping){
       // this will get called whenever a letterContainer gets pressed --> appStatus.isTyping ===s true
       $('#keywords').hide();
       $('#backHome').hide();
+      $('.keywords-text').hide();
       $('#spaceDeleteBack').show();
       $('.letters-text').hide();
     } else {
@@ -96,8 +100,8 @@ $(document).ready(function(){
   });
 
   $('#backHome').click(function(){
-    console.log('keywords showing - ', appStatus.keywordsShowing);
     showHome();
+    console.log('keywords showing - ', appStatus.keywordsShowing);
     updateUI(letters.initialLetters.split(''));
   });
 
@@ -120,34 +124,18 @@ $(document).ready(function(){
     } else {
       toggleSpaceDeleteBack();
     }
-    // toggleSpaceDeleteBack();
-  }
+  };
 
   var appendAndReset = function(input){
     $('.sentence').append(input);
     var newletters = letters.initialLetters.split('');
     updateUI(newletters);
-  }
+  };
 
   var addSpace = function(){
     $('.sentence').append(' '); 
     toggleSpaceDeleteBack();
-  }
-
-  // var addKeywordFunctionality = function(){
-  //   var showingKeywords = false;
-  //   $('.topBtn').on('click', function(){
-  //     if(!showingKeywords){
-  //       showingKeywords = true;
-  //       showKeywords();
-  //     } else {
-  //       showingKeywords = false;
-  //       updateUI(letters.initialLetters.split(''), true);
-  //       $('.keywords-text').toggle();
-  //       $('.letters-text').toggle();
-  //     }
-  //   });
-  // }
+  };
 
   function toggleSpaceDeleteBack(){
     // $('.first').toggle();
@@ -162,7 +150,7 @@ $(document).ready(function(){
     $('#delete').toggle();
     $('#space').toggle();
     $('#back').toggle();
-  }
+  };
 
   function showKeywords(){
     appStatus.keywordsShowing = true;
@@ -173,7 +161,7 @@ $(document).ready(function(){
     $('#keywords').toggle();
     $('.keywords-text').toggle();
     $('.letters-text').toggle();
-  }
+  };
 
   var deleteLastLetter = function(){
     var currentStr = $('.sentence').html();
@@ -183,7 +171,7 @@ $(document).ready(function(){
       $('.sentence').html(strArray.join(''));
     }
     toggleSpaceDeleteBack();
-  } 
+  };
 
   updateUI(letters.initialLetters.split(''), true);
 });
