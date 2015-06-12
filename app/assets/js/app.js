@@ -14,6 +14,7 @@ $(document).ready(function(){
       appStatus.isTyping = false;
       // this will get called on any reset of the entire UI
       // handle the css here
+      $('.letterContainer').show();
       $('.sentence').html('');
       $('.instruction-start').show();
       $('#backHome').hide();
