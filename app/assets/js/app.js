@@ -12,6 +12,7 @@ $(document).ready(function(){
     var reset = reset || false;
     console.log('typing status', appStatus.isTyping)
     if(reset){
+      // reset the app settings;
       appStatus.keywordsShowing = false;
       appStatus.isTyping = false;
       // this will get called on any reset of the entire UI
@@ -41,7 +42,6 @@ $(document).ready(function(){
       $('.keywords-text').hide();  
     }
     if(input.length === 1){
-      console.log('appening item')
       appendAndReset(input);
     } else {
       var letterContainers = document.getElementsByClassName('letterContainer');
@@ -84,7 +84,7 @@ $(document).ready(function(){
   });
 
   $('#space').click(function(){
-    space();
+    addSpace();
   });
 
   $('#back').click(function(){
@@ -96,6 +96,7 @@ $(document).ready(function(){
   });
 
   $('#backHome').click(function(){
+    console.log('keywords showing - ', appStatus.keywordsShowing);
     showHome();
     updateUI(letters.initialLetters.split(''));
   });
@@ -104,47 +105,49 @@ $(document).ready(function(){
     toggleSpaceDeleteBack();
   });
   
-  // move to helpers.js
+
+  //////////////////////////////////////////////////////
+  //////// HELPER FUNCTIONS - MODIFY THE UI ////////////
+  //////////////////////////////////////////////////////
+
   var showHome = function(){
-    console.log('showhome pressed');
     if(appStatus.keywordsShowing){
       $('#keywords').show();
       $('#backHome').hide();
       $('.keywords-text').hide();
       $('.letters-text').show();
+      appStatus.keywordsShowing = false;    
+    } else {
+      toggleSpaceDeleteBack()
     }
-    appStatus.keywordsShowing = false;    
     // toggleSpaceDeleteBack();
   }
 
-  // move to helpers.js
   var appendAndReset = function(input){
     $('.sentence').append(input);
     var newletters = letters.initialLetters.split('');
     updateUI(newletters);
-  };
+  }
 
-  // move to helpers.js
-  var space = function(){
+  var addSpace = function(){
     $('.sentence').append(' '); 
     toggleSpaceDeleteBack();
-  };
+  }
 
-  // move to helpers.js
-  var addKeywordFunctionality = function(){
-    var showingKeywords = false;
-    $('.topBtn').on('click', function(){
-      if(!showingKeywords){
-        showingKeywords = true;
-        showKeywords();
-      } else {
-        showingKeywords = false;
-        updateUI(letters.initialLetters.split(''), true);
-        $('.keywords-text').toggle();
-        $('.letters-text').toggle();
-      }
-    });
-  };
+  // var addKeywordFunctionality = function(){
+  //   var showingKeywords = false;
+  //   $('.topBtn').on('click', function(){
+  //     if(!showingKeywords){
+  //       showingKeywords = true;
+  //       showKeywords();
+  //     } else {
+  //       showingKeywords = false;
+  //       updateUI(letters.initialLetters.split(''), true);
+  //       $('.keywords-text').toggle();
+  //       $('.letters-text').toggle();
+  //     }
+  //   });
+  // }
 
   function toggleSpaceDeleteBack(){
     // $('.first').toggle();
@@ -179,8 +182,7 @@ $(document).ready(function(){
       $('.sentence').html(strArray.join(''));
     }
     toggleSpaceDeleteBack();
-  }
-
+  } 
 
   updateUI(letters.initialLetters.split(''), true);
 });
